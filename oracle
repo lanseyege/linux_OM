@@ -2,4 +2,6 @@
 SELECT table_name, column_name, data_type, data_length
 FROM USER_TAB_COLUMNS
 WHERE table_name = 'MYTABLE'
-//
+//python cx_Oracle
+sql = "select column_name from user_tab_columns where table_name='mytable'"
+cx_Oracle.execute(sql)
