@@ -22,3 +22,6 @@ df = df.assign(F = np.where(df['A']>=3,10,-10))
 k = []
 h1 = df[df.A.isin(K)]
 h2 = df[~df.A.isin(K)]
+
+#map , such as map 1-0 to 1, 2-2 to 2,1-2 to 3
+data[''] = data[''].map(lambda x: 1 if x[0]>x[-1] 2 elif x[0] == x[-1] else 3)
