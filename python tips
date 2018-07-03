@@ -1,8 +1,24 @@
-// sort dict by values
+#sort dict by values
 import operator
 x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
 sorted_x = sorted(x.items(), key=operator.itemgetter(1))
-//sort dict by keys
+#sort dict by keys
 import operator
 x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
 sorted_x = sorted(x.items(), key=operator.itemgetter(0))
+
+#pandas tips
+import pandas as pd
+import numpy as np
+
+#Add a new column
+df = pd.DataFrame({'A':[1,2,3],'B':[2,3,4]})
+df['C'] = df.apply(lambda x: 100 if x[0]>=3 else -100, axis=1)
+df['D'] = np.where(df['B']>=3,100,-100)
+df['E'] = [100 if x>=3 else -100 for x in df.A]
+df = df.assign(F = np.where(df['A']>=3,10,-10))
+#pandas query , in consideration
+#pandas not in or in 
+k = []
+h1 = df[df.A.isin(K)]
+h2 = df[~df.A.isin(K)]
